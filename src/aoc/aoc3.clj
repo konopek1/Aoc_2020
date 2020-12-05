@@ -22,7 +22,6 @@
 (defn traverse
   [input [col-step row-step]]
   (loop [path input row 0 col 0 trees 0]
-    (print row-step " " col-step "\n")
     (if (<= (+ row row-step) (dec (count path)))
       (recur path (+ row row-step) (+ col col-step) (+ trees (check-if-tree row col path)))
       trees)))
